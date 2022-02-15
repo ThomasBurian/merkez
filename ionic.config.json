@@ -1,0 +1,7 @@
+{
+  "name": "delivery-pro",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
