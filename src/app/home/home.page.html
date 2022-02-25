@@ -7,14 +7,50 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-content>
+    <swiper [config]="config" #swiper>
+      <ng-template *ngFor="let slide of slider?.images" swiperSlide>
+        <img [src]="slide"/>
+      </ng-template>
+    </swiper>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-grid>
+
+    <!--ion-row style="margin-top: 8px; font-size: 20px; font-family: 'Arial Black'; text-align: center; color: #DE9D3F; font-weight: bold;" >
+      <ion-col  color="secondary">
+      </ion-col>
+      <ion-col  size="8" color="secondary">
+        <h3>{{slider?.title.en}}</h3>
+      </ion-col>
+      <ion-col  color="secondary">
+      </ion-col>
+    </ion-row>
+    <ion-row style="font-size: 13px; text-align: center; color:black; margin-top: 9px; " >
+      <ion-col  color="secondary">
+      </ion-col>
+      <ion-col size="9" >
+      {{slider?.text.en}}  </ion-col>
+      <ion-col  color="secondary">
+      </ion-col>
+    </ion-row-->
+
+
+    <ion-row style="margin-top: 15px;">
+      <ion-col>
+        <p style="padding-left: 15px; font-size: 12px; font-weight: bold;">Categories</p>
+      </ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    
+    <ion-row  style="margin-top: -13px;" class=" justify-content-center align-items-center">
+      <ion-col  *ngFor="let category of categories" size="4" class="" style=" color: white; ">
+        <div  (click)="showCategory(category)" class="container" style="padding: 5px; ">
+          <img [src]="category.image" alt="Snow" style="border-radius: 7px; width:100%;">
+          <div style="font-weight: bold;" class="centered">{{category.name.en}}</div>
+        </div>
+      </ion-col>
+    </ion-row>
+    
+    </ion-grid>
 </ion-content>
