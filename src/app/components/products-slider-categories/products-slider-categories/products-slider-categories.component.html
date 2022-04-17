@@ -1,0 +1,52 @@
+<ion-grid>
+  <ion-row >
+    <ion-col *ngFor="let product of products" 
+    size="6" style="padding: 0px !important; margin: 0px !important">
+
+      <ion-card  >
+        <div #basketElement [hidden]="product.btnHidden" class="ion-text-end">
+          
+          <ion-button style="margin-top: 19px">
+            <h4 (click)="removeProduct(product, $event)">
+               <ion-icon  style="margin-right: 14px;" slot="start" name="remove-outline">
+              </ion-icon>
+            </h4>
+           
+            {{product.productNoChosen}} 
+            <h4 (click)="addProduct(product, $event)">
+              <ion-icon  style="margin-left: 14px;" slot="end" name="add-outline">
+             </ion-icon>
+           </h4>
+          </ion-button>   
+        </div>
+      
+        <h4  [hidden]="!product.btnHidden"  class="ion-text-end" (click)="unhideBtns(product)">
+          <ion-icon  style=" border-radius: 7px; margin-right: 8px; font-size: 25px; padding: 2px; background-color: #3f89de; color: white" name="basket-outline"></ion-icon>
+       
+        </h4>
+       
+        <ion-img (click)= "showProductDetails(product)"  style="height: 130px" [src]="product.image"></ion-img>
+           
+        <ion-card-header>
+          <ion-card-subtitle style="font-size: 12px;">{{product.name.en}}</ion-card-subtitle>
+          <ion-card-title style="font-size: 12px;">{{product.description.en}}</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+
+          <ion-grid>
+            <ion-row>
+              <ion-col style=" font-weight: bold; padding: 0px !important; margin: 0px !important">
+                <ion-text color="primary">{{product.price.euro | currency:'GBP'}}</ion-text>
+              </ion-col>
+              <ion-col  style=" text-decoration: line-through; font-size: 12px; text-align: right; padding: 0px !important; margin: 0px !important">
+                <ion-text >{{product.price.euro | currency:'GBP'}}</ion-text>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

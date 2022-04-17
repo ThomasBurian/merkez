@@ -6,6 +6,9 @@ import { Slider } from '../models/slider.model';
 import { SwiperComponent, SwiperModule } from 'swiper/angular';
 import SwiperCore, { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
 import { AutoplayOptions, SwiperOptions } from 'swiper/types';
+import { NavController } from '@ionic/angular';
+import { NavigationExtras } from '@angular/router';
+import { StorageService } from '../services/storage.service';
 
 SwiperCore.use([Autoplay, Pagination])
 
@@ -30,7 +33,9 @@ export class HomePage implements AfterContentChecked{
     pagination: true
   };
 
-  constructor(private fbService: FirebaseService) {}
+  constructor(private fbService: FirebaseService, 
+              private storage: StorageService,
+              private navCtrl: NavController) {}
 
   ngAfterContentChecked(): void {
     if(this.swiper){
@@ -39,20 +44,26 @@ export class HomePage implements AfterContentChecked{
         
       })
     }
-    
   }
 
   ngOnInit(){
-  
+    this.storage.init()
+    
     this.fbService.getCategories().subscribe(data => {
       this.categories = data
-
     })
 
     this.fbService.getSlider().subscribe(data => {
       this.slider = data[0]
     })
-    
   }
 
+  showCategory(category) {
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+          'category': category
+      }
+    };
+    this.navCtrl.navigateForward('/category', navigationExtras);
+  }
 }

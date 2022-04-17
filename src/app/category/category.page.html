@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="dark" ></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{category.name.en}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<app-products-slider-categories [categoryId]="category.id"></app-products-slider-categories>
+</ion-content>
+<ion-footer>
+  <app-footer-bar></app-footer-bar>
+</ion-footer>

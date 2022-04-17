@@ -4,4 +4,5 @@ export class Category {
         "en": String
     }
     "image": String
+    "id" : String
 }

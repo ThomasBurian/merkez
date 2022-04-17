@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="premier">
+    <ion-buttons slot="start">
+      <ion-back-button color="dark" ></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="clearBasket()">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Basket</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-item *ngFor="let product of productsBought">
+    <ion-thumbnail slot="start">
+      <img [src]="product.image">
+    </ion-thumbnail>
+    <ion-label color="primary">
+      {{product.name.en}}
+      <ion-text color="dark" style="font-size: 13px;" >
+        <p> 
+          {{(product.description.en.length>15)? (product.description.en | slice:0:15)+'...':(product.description.en)}}
+        </p>
+      </ion-text>
+    </ion-label>
+    
+
+    <div style="margin-bottom: 5px" #basketElement class="ion-text-end">
+      <ion-button style="margin-top: 19px">
+        <h4 (click)="removeProduct(product, $event)">
+           <ion-icon  style="margin-right: 14px;" slot="start" name="remove-outline">
+          </ion-icon>
+        </h4>
+        {{product.productNoChosen}} 
+        <h4 (click)="addProduct(product, $event)">
+          <ion-icon  style="margin-left: 14px;" slot="end" name="add-outline">
+         </ion-icon>
+       </h4>
+      </ion-button>   
+    </div>
+
+  </ion-item>
+</ion-content>

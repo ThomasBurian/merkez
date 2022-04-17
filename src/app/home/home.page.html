@@ -1,12 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Delivery App
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
   <ion-content>
     <swiper [config]="config" #swiper>
       <ng-template *ngFor="let slide of slider?.images" swiperSlide>
@@ -15,25 +14,6 @@
     </swiper>
 
   <ion-grid>
-
-    <!--ion-row style="margin-top: 8px; font-size: 20px; font-family: 'Arial Black'; text-align: center; color: #DE9D3F; font-weight: bold;" >
-      <ion-col  color="secondary">
-      </ion-col>
-      <ion-col  size="8" color="secondary">
-        <h3>{{slider?.title.en}}</h3>
-      </ion-col>
-      <ion-col  color="secondary">
-      </ion-col>
-    </ion-row>
-    <ion-row style="font-size: 13px; text-align: center; color:black; margin-top: 9px; " >
-      <ion-col  color="secondary">
-      </ion-col>
-      <ion-col size="9" >
-      {{slider?.text.en}}  </ion-col>
-      <ion-col  color="secondary">
-      </ion-col>
-    </ion-row-->
-
 
     <ion-row style="margin-top: 15px;">
       <ion-col>
@@ -53,4 +33,9 @@
     </ion-row>
     
     </ion-grid>
-</ion-content>
+</ion-content>    
+<ion-footer>
+  <app-footer-bar></app-footer-bar>
+</ion-footer>
+
+
