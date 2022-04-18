@@ -1,15 +1,15 @@
-<ion-toolbar color="premier">
+<ion-toolbar >
   <ion-buttons slot="secondary">
-    <ion-button>
-      <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+    <ion-button (click)="gotoHome()">
+      <ion-icon slot="icon-only" name="home"></ion-icon>
     </ion-button>
     <ion-button>
       <ion-icon slot="icon-only" name="search"></ion-icon>
     </ion-button>
   </ion-buttons>
   <ion-buttons slot="primary">
-    <ion-button color="premier">
-      <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+    <ion-button>
+      <ion-icon slot="icon-only" name="person-circle"></ion-icon>
     </ion-button>
     <ion-button (click)="gotoBasket()">
       <ion-icon  slot="icon-only" name="basket"></ion-icon>

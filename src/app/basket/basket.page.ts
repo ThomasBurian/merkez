@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { BasketServiceService } from '../services/basket-service.service';
 
 @Component({
@@ -10,13 +11,14 @@ export class BasketPage implements OnInit {
 
   productsBought
   
-  constructor(private basketService: BasketServiceService) { }
+  constructor(private basketService: BasketServiceService,
+    private navCtrl: NavController) { }
 
   ngOnInit() {
     this.initBasket()
   }
-  initBasket(){
 
+  initBasket(){
     this.basketService.getObservableProductsNumb().subscribe(productNumber =>{
       this.basketService.getProductsFromStorage().then(data => {
         if(data != undefined)
@@ -24,8 +26,20 @@ export class BasketPage implements OnInit {
       })
     })
   }
+  
+  addProduct(product, e){
+    this.basketService.addProductToStorage(product);
+  }
+ 
+  removeProduct(product, e){
+     this.basketService.removeProduct(product)
+  }
 
   clearBasket(){
     this.basketService.clearBasket();
+  }
+
+  gotoCheckout(){
+    this.navCtrl.navigateForward('checkout')
   }
 }

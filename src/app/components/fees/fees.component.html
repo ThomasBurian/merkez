@@ -1,0 +1,31 @@
+<ion-grid>
+<ion-row style="margin-top: 20px; margin-left: 20px;">
+
+  <ion-col size="8"> <p style="padding-left: 15px; font-size: 12px; ">Total</p>
+  </ion-col>
+  <ion-col size="4"> <p style="padding-left: 15px; font-size: 12px; ">{{totalFee | currency:'GBP'}}</p>
+  </ion-col>
+  <ion-col ></ion-col>
+
+</ion-row>
+
+<ion-row style="margin-left: 20px;">
+
+  <ion-col size="8"> <p style="padding-left: 15px; font-size: 12px; ">Delivery Fee</p>
+  </ion-col>
+  <ion-col size="4"> <p style="padding-left: 15px; font-size: 12px; ">{{deliveryFee | currency:'GBP'}}</p>
+  </ion-col>
+  <ion-col ></ion-col>
+
+</ion-row>
+
+<ion-row style="margin-left: 20px;">
+  <ion-col size="8"> <p style="padding-left: 15px; font-size: 15px; font-weight: bold;">Charge Amount </p>
+  </ion-col>
+  <ion-col size="4"> <p style="padding-left: 15px; font-size: 15px; font-weight: bold; ">{{chargeAmount | currency:'GBP'}}</p>
+  </ion-col>
+  <ion-col ></ion-col>
+  
+</ion-row>
+</ion-grid>
+

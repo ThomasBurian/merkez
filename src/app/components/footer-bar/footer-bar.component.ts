@@ -15,4 +15,7 @@ export class FooterBarComponent implements OnInit {
   gotoBasket(){
     this.navCtrl.navigateForward('/basket')
   }
+  gotoHome(){
+    this.navCtrl.navigateForward('/home')
+  }
 }
