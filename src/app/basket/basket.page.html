@@ -25,6 +25,7 @@
         <p> 
           {{(product.description.en.length>15)? (product.description.en | slice:0:15)+'...':(product.description.en)}}
         </p>
+        {{product.price.euro | currency:'GBP'}}
       </ion-text>
     </ion-label>
     
@@ -42,8 +43,9 @@
        </h4>
       </ion-button>   
     </div>
-
   </ion-item>
+  
+  <app-fees></app-fees>
 </ion-content>
 <ion-footer>
   <ion-button color="primary" (click)="gotoCheckout()" fill="outline" expand="block">Checkout</ion-button>

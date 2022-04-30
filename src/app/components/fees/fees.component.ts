@@ -17,6 +17,10 @@ export class FeesComponent implements OnInit {
 
   ngOnInit() {
     this.basketService.getObservableProductsNumb().subscribe(productNumber =>{
+
+      this.totalFee = 0;
+      this.chargeAmount = 0;
+
       this.basketService.getProductsFromStorage().then(data => {
         if(data != undefined)
           this.productsBought = JSON.parse(data)

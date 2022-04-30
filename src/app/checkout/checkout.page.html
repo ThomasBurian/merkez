@@ -8,7 +8,15 @@
 </ion-header>
 
 <ion-content>
-<app-fees></app-fees>
+  <ion-grid>
+    <ion-row>
+<ion-button (click)="openMap()">Add Address</ion-button>
+    </ion-row>
+    <ion-row>
+     <app-fees></app-fees> 
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
 
 <ion-footer>
