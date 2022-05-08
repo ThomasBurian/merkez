@@ -4,13 +4,14 @@ import { ProductsSliderCategoriesComponent } from './products-slider-categories/
 import { IonicModule } from '@ionic/angular';
 import { FooterBarComponent } from './footer-bar/footer-bar.component';
 import { FeesComponent } from './fees/fees.component';
+import { AddressesComponent } from './addresses/addresses.component';
 
 @NgModule({
  
   imports:[CommonModule, IonicModule],
-  exports: [FeesComponent, ProductsSliderCategoriesComponent,FooterBarComponent
-     
+  exports: [FeesComponent, ProductsSliderCategoriesComponent,FooterBarComponent,
+    AddressesComponent
     ],
-    declarations: [ FeesComponent, ProductsSliderCategoriesComponent, FooterBarComponent]
+    declarations: [ FeesComponent, AddressesComponent,ProductsSliderCategoriesComponent, FooterBarComponent]
 })
 export class ComponentsModule { }

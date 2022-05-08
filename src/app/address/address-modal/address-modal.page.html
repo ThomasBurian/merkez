@@ -1,0 +1,66 @@
+
+<ion-content>
+  <h1 class="closeX" (click)="closeModal()">
+    <ion-icon  name="close-outline"></ion-icon>
+  </h1>
+  <ion-grid >
+  
+  <ion-row style="display: flex !important; margin-top: 25px;" justify-content-center align-items-center>
+     <ion-col></ion-col>
+      <ion-col  size="8">
+        <ion-input [(ngModel)]="address.name"  placeholder="Address Name"></ion-input>
+  
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  
+  <ion-row style="display: flex !important; margin-top: 8px;" justify-content-center align-items-center>
+    <ion-col></ion-col>
+     <ion-col  size="8">
+       
+       <ion-input  placeholder="District" [(ngModel)]="address.district"></ion-input>
+  
+     </ion-col>
+     <ion-col></ion-col>
+   </ion-row>
+  
+  <ion-row style="display: flex !important; margin-top: 8px;" justify-content-center align-items-center>
+    <ion-col></ion-col>
+     <ion-col  size="8">
+       <ion-input  placeholder="Neighborhood" [(ngModel)]="address.neighborhood"></ion-input>
+  
+     </ion-col>
+     <ion-col></ion-col>
+   </ion-row>
+   <ion-row style="display: flex !important; margin-top: 8px;" justify-content-center align-items-center>
+    <ion-col></ion-col>
+     <ion-col  size="8">
+       <ion-input  placeholder="Street" [(ngModel)]="address.street"></ion-input>
+  
+     </ion-col>
+     <ion-col></ion-col>
+   </ion-row>
+   <ion-row style="display: flex !important; margin-top: 8px;" justify-content-center align-items-center>
+    <ion-col></ion-col>
+     <ion-col  size="8">
+       <ion-input  placeholder="Door number" [(ngModel)]="address.doorNo"></ion-input>
+  
+     </ion-col>
+     <ion-col></ion-col>
+   </ion-row>
+
+   <ion-row style="display: flex !important; margin-top: 8px;" justify-content-center align-items-center>
+    <ion-col></ion-col>
+     <ion-col  size="8">
+      <ion-textarea [(ngModel)]="address.note" placeholder="Notes ..."></ion-textarea>
+  
+     </ion-col>
+     <ion-col></ion-col>
+   </ion-row>
+ 
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-button color="primary" (click)="saveAddress()" fill="outline" expand="block">Save address</ion-button>
+
+</ion-footer>

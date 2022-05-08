@@ -1,8 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>map</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="dark" ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Address</ion-title>
   </ion-toolbar>
 </ion-header>
+
 
 <ion-content>
   <google-map #map height="100%"
@@ -23,3 +27,7 @@
   <map-info-window>{{ infoContent }}</map-info-window>
 </google-map>
 </ion-content>
+<ion-footer>
+  <ion-button color="primary" (click)="addAddressModal()" fill="outline" expand="block">Add your address</ion-button>
+
+</ion-footer>

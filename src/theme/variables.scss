@@ -1,6 +1,16 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+.small-modal{
+  background: rgba(0, 0, 0, 0.2) !important;
+  padding-top: 30%;
+  height: 100%; 
+  position: fixed; 
+  bottom:0%;
+  width:100%; 
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
 /** Ionic CSS Variables **/
 :root {
   /** primary **/

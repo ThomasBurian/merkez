@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'map',
     loadChildren: () => import('./address/map/map.module').then( m => m.MapPageModule)
   },
+  {
+    path: 'address-modal',
+    loadChildren: () => import('./address/address-modal/address-modal.module').then( m => m.AddressModalPageModule)
+  },
 ];
 
 @NgModule({

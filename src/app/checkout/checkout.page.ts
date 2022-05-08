@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { AddressService } from '../services/address.service';
 
 @Component({
   selector: 'app-checkout',
@@ -8,13 +9,10 @@ import { NavController } from '@ionic/angular';
 })
 export class CheckoutPage implements OnInit {
 
-  constructor(private navCtrl: NavController) { }
+  constructor(private navCtrl: NavController,
+    private addressService: AddressService) { }
 
   ngOnInit() {
-  }
-
-  openMap(){
-    this.navCtrl.navigateForward('/map')
   }
 
 }
